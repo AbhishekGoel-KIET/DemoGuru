@@ -1,17 +1,18 @@
-package bankingDemo1;
+package firefox;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Guru99Project {
-	ChromeDriver driver;
+public class FirefoxProject {
+	FirefoxDriver driver;
 
 	public void invokeBrowser() {
 
-		System.setProperty("webdriver.chrome.driver", "E:\\Softwares\\Selenium\\Drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
+		System.setProperty("webdriver.gecko.driver", "E:\\Softwares\\Selenium\\Drivers\\geckodriver-v0.29.0-win64\\geckodriver.exe");
+		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.navigate().to("http://demo.guru99.com/v4/");

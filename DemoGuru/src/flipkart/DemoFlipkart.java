@@ -1,6 +1,5 @@
 package flipkart;
 
-import amazon.AmazonProject;
 
 public class DemoFlipkart {
 
