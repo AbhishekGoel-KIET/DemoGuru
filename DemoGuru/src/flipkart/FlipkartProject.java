@@ -19,8 +19,10 @@ public class FlipkartProject {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //Implicit Wait
+		// driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		// Implicit Wait
 		driver.navigate().to("https://www.flipkart.com/");
+
 	}
 
 	public void closePopup() {
@@ -31,9 +33,10 @@ public class FlipkartProject {
 		Actions action = new Actions(driver);
 		WebElement electronicsLink = driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[2]/div/div/span[1]"));
 		action.moveToElement(electronicsLink).build().perform();
-		//Explicit Wait
+		// Explicit Wait
 		waitTillElementVisible(By.xpath(
-				"//div[contains(@class, '_1QrT3s')]/div[contains(@class, '_1fwVde')]/a[contains(@class, '_3QN6WI')][4]"), 10);
+				"//div[contains(@class, '_1QrT3s')]/div[contains(@class, '_1fwVde')]/a[contains(@class, '_3QN6WI')][4]"),
+				10);
 		action.moveToElement(driver.findElement(By.xpath(
 				"//div[contains(@class, '_1QrT3s')]/div[contains(@class, '_1fwVde')]/a[contains(@class, '_3QN6WI')][4]")))
 				.click().build().perform();

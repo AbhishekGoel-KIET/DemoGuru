@@ -1,8 +1,11 @@
 package bankingDemo1;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.Select;
 
 public class Guru99Project {
@@ -15,6 +18,7 @@ public class Guru99Project {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.navigate().to("http://demo.guru99.com/v4/");
+
 	}
 
 	public void closeBrowser() {
@@ -31,6 +35,7 @@ public class Guru99Project {
 
 		// To perform single operation
 		driver.findElement(By.name("password")).sendKeys(password);
+		//sendKeys(Keys.SHIFT, password); -- To send the argument string in All Capital Letters
 
 		driver.findElement(By.name("btnLogin")).click();
 
@@ -131,8 +136,8 @@ public class Guru99Project {
 
 	public String getWithdrawTransactionID() {
 		return driver
-				.findElement(By
-						.xpath("//table[@id='withdraw']/tbody/tr/td[text()='Transaction ID']//following-sibling::td"))
+				.findElement(
+						By.xpath("//table[@id='withdraw']/tbody/tr/td[text()='Transaction ID']//following-sibling::td"))
 				.getText();
 	}
 
